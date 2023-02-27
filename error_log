@@ -1,0 +1,32 @@
+[27-Feb-2023 17:49:55 UTC] PHP Warning:  Undefined property: stdClass::$img_seo in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 244
+[27-Feb-2023 17:49:55 UTC] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home/uiumji3ay04q/public_html/web/includes/sdk.php:244
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(244): getimagesize()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/categories.php(1): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 244
+[27-Feb-2023 17:59:19 UTC] PHP Warning:  Undefined property: stdClass::$img_seo in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[27-Feb-2023 17:59:19 UTC] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home/uiumji3ay04q/public_html/web/includes/sdk.php:245
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(245): getimagesize()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/categories.php(1): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[27-Feb-2023 18:01:34 UTC] PHP Warning:  Undefined property: stdClass::$img_seo in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[27-Feb-2023 18:01:34 UTC] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home/uiumji3ay04q/public_html/web/includes/sdk.php:245
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(245): getimagesize()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/categories.php(1): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[27-Feb-2023 18:01:36 UTC] PHP Warning:  Undefined property: stdClass::$img_seo in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[27-Feb-2023 18:01:36 UTC] PHP Fatal error:  Uncaught ValueError: Path cannot be empty in /home/uiumji3ay04q/public_html/web/includes/sdk.php:245
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(245): getimagesize()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/categories.php(1): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245

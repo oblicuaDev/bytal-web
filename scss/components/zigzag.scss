@@ -1,0 +1,87 @@
+.spacer {
+  height: 50px;
+}
+.zigzag {
+  padding: 50px 0;
+  @media only screen and (max-width: 1024px) {
+    padding: 0;
+    gap: 30px;
+  }
+  .content,
+  .gallery {
+    box-sizing: border-box;
+
+    width: 50%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+    }
+  }
+
+  .content {
+    color: var(--texto);
+    padding-right: 60px;
+    padding-left: 60px;
+    @media only screen and (max-width: 1024px) {
+      padding: 20px;
+    }
+    h2 {
+      margin-bottom: 20px;
+      &.bluetitle {
+        color: var(--azul) !important;
+      }
+    }
+    ul {
+      list-style-type: disc;
+      padding-left: 25px;
+    }
+    p,
+    li {
+      font-size: 1.4em;
+      line-height: 1.8em;
+      margin-bottom: 20px;
+    }
+    .button {
+      display: block;
+      max-width: 300px;
+      @media only screen and (max-width: 1024px) {
+        margin: 0 auto;
+      }
+    }
+  }
+  .gallery {
+    padding-left: 30px;
+    @media only screen and (max-width: 1024px) {
+      padding: 0 10px;
+    }
+    video {
+      object-fit: contain;
+      margin: 0 auto;
+    }
+    figure,
+    video {
+      height: 480px;
+      overflow: hidden;
+      img {
+        object-fit: contain;
+        width: 100%;
+        height: 100%;
+        margin: 0 auto;
+      }
+    }
+  }
+}
+.bx-wrapper {
+  -moz-box-shadow: none !important;
+  -webkit-box-shadow: none !important;
+  box-shadow: none !important;
+  border: 0;
+  background: transparent;
+}
+.bx-wrapper .bx-pager.bx-default-pager a {
+  background: #ccc !important;
+}
+.bx-wrapper .bx-pager.bx-default-pager a:hover,
+.bx-wrapper .bx-pager.bx-default-pager a.active,
+.bx-wrapper .bx-pager.bx-default-pager a:focus {
+  background: var(--azul) !important;
+}

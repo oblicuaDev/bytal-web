@@ -1,0 +1,132 @@
+.topservice {
+  height: 70vh;
+  min-height: 580px;
+  section {
+    width: 50%;
+    height: 100%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+      height: 100%;
+      object-fit: contain;
+      object-position: bottom;
+      @media only screen and (max-width: 1024px) {
+        height: 280px;
+      }
+    }
+  }
+  .thumbnail {
+    background: url(../img/background-lines-diagonal.svg) no-repeat top right;
+    background-size: 100% auto;
+    @media only screen and (max-width: 1024px) {
+      background-size: contain;
+      background-position: center;
+    }
+  }
+  .content {
+    padding-top: 30vh;
+    overflow: hidden;
+    @media only screen and (max-width: 1024px) {
+      padding: 0;
+    }
+    div {
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      @media only screen and (max-width: 1024px) {
+        align-items: center;
+        margin-bottom: 30px;
+      }
+      p {
+        color: var(--texto);
+        float: right;
+        font-size: 1.4em;
+        line-height: 1.6em;
+        width: 65%;
+        margin: 30px 0;
+      }
+    }
+  }
+  h1 {
+    background: var(--azul);
+    border-radius: 0 0 80px 0;
+    color: #fff;
+    font-size: 3em;
+    padding: 15px 0;
+    text-align: center;
+    width: 100%;
+  }
+}
+.service-info {
+  padding: 50px 0;
+  text-align: center;
+  @media only screen and (max-width: 1024px) {
+    padding: 20px;
+  }
+  article {
+    box-sizing: border-box;
+    color: #fff;
+    padding: 40px 60px;
+    width: 33.33%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+      padding: 20px;
+    }
+
+    h1 {
+      font-size: 1.6em;
+      margin: 10px 0;
+    }
+    p {
+      font-size: 1.3em;
+    }
+  }
+  .button {
+    display: block;
+    margin: 30px auto;
+  }
+}
+.doctorcontainer {
+  padding: 60px 0;
+}
+.doctor {
+  display: flex;
+  align-items: center;
+
+  div {
+    box-sizing: border-box;
+    width: 50%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+    }
+    img {
+      width: 100%;
+    }
+  }
+  .profile {
+    a {
+      display: block;
+      margin: 30px auto;
+    }
+    article {
+      background: var(--azul);
+      color: #fff;
+      box-sizing: border-box;
+      padding: 40px 60px;
+      border-radius: 0 120px 0 0;
+      @media only screen and (max-width: 1024px) {
+        border-radius: 0;
+      }
+      h1 {
+        font-size: 3em;
+      }
+      p {
+        font-size: 1.4em;
+        margin-top: 10px;
+      }
+    }
+  }
+}

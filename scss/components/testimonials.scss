@@ -1,0 +1,78 @@
+.testimonials {
+  .t-slider {
+    padding-bottom: 30px;
+    overflow: hidden;
+  }
+  padding: 30px 0 60px 0;
+
+  h2 {
+    text-align: center;
+  }
+  section {
+    justify-content: center;
+  }
+  article {
+    border: 3px solid var(--azul);
+    box-shadow: 3px 3px 3px #ccc;
+    border-radius: 20px;
+    margin: 0 20px 30px 20px;
+    padding: 50px 30px;
+    position: relative;
+    width: 45%;
+    @media only screen and (max-width: 1024px) {
+      width: 100%;
+      margin: 10px;
+      padding: 20px;
+    }
+    &:after {
+      background: url(../img/symbol.svg) no-repeat center center;
+      background-size: 100% auto;
+      content: "";
+      display: block;
+      width: 40px;
+      height: 40px;
+      position: absolute;
+      right: 20px;
+      top: 20px;
+    }
+    a {
+      display: flex;
+      width: 100%;
+      margin: 0 auto;
+      align-items: center;
+      justify-content: center;
+      svg {
+        position: absolute;
+      }
+    }
+    figure {
+      box-sizing: border-box;
+      border-radius: 50%;
+      overflow: hidden;
+      width: 30%;
+      img {
+        width: 100%;
+      }
+    }
+    .description {
+      box-sizing: border-box;
+      padding-left: 30px;
+      width: 70%;
+
+      h1 {
+        font-size: 2.3em;
+        color: var(--azul);
+      }
+      h4 {
+        font-size: 1.3em;
+        color: var(--azul);
+        margin: 10px 0;
+      }
+      P {
+        font-size: 1.3em;
+        color: var(--texto);
+        line-height: 1.5em;
+      }
+    }
+  }
+}
