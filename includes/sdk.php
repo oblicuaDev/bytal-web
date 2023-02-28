@@ -8,9 +8,11 @@ class Bytal
     public $politics;
     public $about;
     public $categories;
+    public $cache;
 
     public function __construct()
     {
+        $this->cache=true;
         $this->generalInfo = $this->gInfo();
         $this->politics = $this->gPolitics();
         $this->about = $this->gAbout();
@@ -23,10 +25,35 @@ class Bytal
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
-        $output = curl_exec($ch);
-        $request = json_decode($output);
-        curl_close($ch);
-        return $request;
+        $filetitle = $this->get_alias($endpoint).".json";
+
+        if($this->cache)
+        {
+            
+            if (!file_exists('cache')) {
+                mkdir('cache', 0777, true);
+            }
+            $path = "cache/".$filetitle;
+
+            if(file_exists($path)){
+                $data = file_get_contents($path);
+                return json_decode($data);
+            }else{
+                $output = curl_exec($ch);
+                $request = json_decode($output);
+                curl_close($ch);
+
+                $bwriting = file_put_contents($path, $output); 
+                return $request;
+            }
+        }else
+        {
+                $output = curl_exec($ch);
+                $request = json_decode($output);
+                curl_close($ch);
+                return $request;
+        }
+        
     }
 
     function gPosts($type, $id = ""){
