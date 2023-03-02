@@ -1,5 +1,8 @@
-<?php 
-$aboutTitle = 1;
+<?php
+include 'includes/config.php'; 
+  $about = $bytal->gAbout(); 
+  $aboutTitle = 1;
+  $seoVariable = $about;
   include "includes/header.php"; 
 ?>
 <div class="bannerSlider">
@@ -26,7 +29,7 @@ $aboutTitle = 1;
 </div>
 <section class="video container">
   <video class="outter" id="videoplayer">
-    <source src="<?=$bytal->about->acf->video?>" type="video/mp4">
+    <source src="<?=$about->acf->video?>" type="video/mp4">
   </video>
 
   <span class="play-btn" id="playvideo"></span>
@@ -34,49 +37,79 @@ $aboutTitle = 1;
 </section>
 <section class="zigzag container flex">
   <div class="content">
-    <h2 class="bold section-title1"><?=$bytal->about->acf->seccion_1->titulo?></h2>
-    <p><?=$bytal->about->acf->seccion_1->descripcion?></p>
+    <h2 class="bold section-title1"><?=$about->acf->seccion_1->titulo?></h2>
+    <p><?=$about->acf->seccion_1->descripcion?></p>
     <a href="" class="button">Ver más</a>
   </div>
   <aside class="gallery">
     <div>
-      <?php 
-                for ($i = 0; $i < 5; $i++) { 
-                  $propertyName = "imagen_$i";
-                  if(isset($bytal->about->acf->seccion_1->imagenes->{$propertyName}) && 
-                    $bytal->about->acf->seccion_1->imagenes->{$propertyName} != "") {
-                ?>
-      <figure>
-        <img src="<?= $bytal->about->acf->seccion_1->imagenes->{$propertyName} ?>" alt="Colpatria" />
-      </figure>
-      <?php 
-                  }
-                }
-                ?>
+    <?php 
+      for ($i = 0; $i < 6; $i++) { 
+        $propertyName = "imagen_$i";
+        if(isset($about->acf->seccion_1->imagenes->{$propertyName})
+          && $about->acf->seccion_1->imagenes->{$propertyName} != "") {
+          
+          $url = $about->acf->seccion_1->imagenes->{$propertyName};
+          $headers = get_headers($url);
+          $content_type = null;
+          
+          foreach($headers as $header) {
+            if (strpos($header, 'Content-Type:') === 0) {
+              $content_type = trim(substr($header, strlen('Content-Type:')));
+              break;
+            }
+          }
+          if ($content_type === 'image/jpeg' || $content_type === 'image/png' || $content_type === 'image/gif') {
+            echo '<figure>';
+            echo '<img src="' . $url . '" alt="Colpatria">';
+            echo '</figure>';
+          } else if ($content_type === 'video/mp4' || $content_type === 'video/webm' || $content_type === 'video/ogg') {
+            echo '<video controls>';
+            echo '<source src="' . $url . '">';
+            echo '</video>';
+          }
+        }
+      }
+      ?>
     </div>
   </aside>
 </section>
 <section class="zigzag container flex">
   <aside class="gallery">
     <div>
-      <?php 
-                for ($i = 0; $i < 5; $i++) { 
-                  $propertyName = "imagen_$i";
-                  if(isset($bytal->about->acf->seccion_2->imagenes->{$propertyName}) && 
-                    $bytal->about->acf->seccion_2->imagenes->{$propertyName} != "") {
-                ?>
-      <figure>
-        <img src="<?= $bytal->about->acf->seccion_2->imagenes->{$propertyName} ?>" alt="Colpatria" />
-      </figure>
-      <?php 
-                  }
-                }
-                ?>
+    <?php 
+      for ($i = 0; $i < 6; $i++) { 
+        $propertyName = "imagen_$i";
+        if(isset($about->acf->seccion_2->imagenes->{$propertyName})
+          && $about->acf->seccion_2->imagenes->{$propertyName} != "") {
+          
+          $url = $about->acf->seccion_2->imagenes->{$propertyName};
+          $headers = get_headers($url);
+          $content_type = null;
+          
+          foreach($headers as $header) {
+            if (strpos($header, 'Content-Type:') === 0) {
+              $content_type = trim(substr($header, strlen('Content-Type:')));
+              break;
+            }
+          }
+          if ($content_type === 'image/jpeg' || $content_type === 'image/png' || $content_type === 'image/gif') {
+            echo '<figure>';
+            echo '<img src="' . $url . '" alt="Colpatria">';
+            echo '</figure>';
+          } else if ($content_type === 'video/mp4' || $content_type === 'video/webm' || $content_type === 'video/ogg') {
+            echo '<video controls>';
+            echo '<source src="' . $url . '">';
+            echo '</video>';
+          }
+        }
+      }
+      ?>
     </div>
   </aside>
   <div class="content">
-    <h2 class="bold section-title1"><?=$bytal->about->acf->seccion_2->titulo?></h2>
-    <p><?=$bytal->about->acf->seccion_2->descripcion?></p>
+    <h2 class="bold section-title1"><?=$about->acf->seccion_2->titulo?></h2>
+    <p><?=$about->acf->seccion_2->descripcion?></p>
     <a href="" class="button">Ver más</a>
   </div>
 
@@ -84,7 +117,7 @@ $aboutTitle = 1;
 <?php include "includes/attrlist.php"; ?>
 <section class="action container">
   <blockquote class="bold italic">
-    <?= $bytal->about->acf->copy_final?>
+    <?= $about->acf->copy_final?>
   </blockquote>
   <a href="" class="button">Quiero que empiece mi experiencia Bytal</a>
 </section>

@@ -1,6 +1,8 @@
 <?php 
-    include "includes/header.php"; 
-    $servicio = $bytal->gPosts("procedimientos", $_GET["id"]);
+include 'includes/config.php'; 
+$servicio = $bytal->gPosts("procedimientos", $_GET["id"]);
+$seoVariable = $servicio;
+include "includes/header.php"; 
 ?>
 
 <div class="topservice flex">

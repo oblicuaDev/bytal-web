@@ -1,4 +1,4 @@
-<?php include "includes/header.php";?>
+<?php include 'includes/config.php';  include "includes/header.php";?>
 <div class="bannerSlider">
   <?php 
   $bannersHome = $bytal->gPosts("banners-home");
@@ -74,7 +74,6 @@
   <aside class="gallery">
     <div>
     <?php 
-    var_dump($bytal->generalInfo->acf->por_que_en_bogota);
 
   for ($i = 0; $i < 6; $i++) { 
     $propertyName = "imagen_$i";
@@ -91,7 +90,6 @@
           break;
         }
       }
-      var_dump($content_type);
       if ($content_type === 'image/jpeg' || $content_type === 'image/png' || $content_type === 'image/gif') {
         echo '<figure>';
         echo '<img src="' . $url . '" alt="Colpatria">';

@@ -1,9 +1,9 @@
-<?php include "includes/header.php"; ?>
+<?php include 'includes/config.php'; $politics = $bytal->gPolitics(); $seoVariable = $politics;  include "includes/header.php"; ?>
 <main class="container politics">
     <h1>
-        <?=$bytal->politics->title->rendered?>
+        <?=$politics->title->rendered?>
     </h1>
-<?=$bytal->politics->content->rendered?>
+<?=$politics->content->rendered?>
 
 </main>
  <?php include "includes/footer.php"; ?>

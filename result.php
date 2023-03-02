@@ -1,4 +1,4 @@
-<?php include "includes/header.php"; $resultado = $bytal->gPosts("resultados", $_GET['id']);
+<?php include 'includes/config.php';  include "includes/header.php"; $resultado = $bytal->gPosts("resultados", $_GET['id']);
 ?>
 <div class="spacer"></div>
 

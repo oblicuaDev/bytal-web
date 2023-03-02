@@ -1,4 +1,4 @@
-<?php include "includes/header.php"; ?>
+<?php include 'includes/config.php';  include "includes/header.php"; ?>
 <div class="spacer"></div>
 <section class="container">
 <h2 class="section-title1">Ya estás más cerca de vivir tu experiencia Bytal en Bogotá</h2>

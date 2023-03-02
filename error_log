@@ -30,3 +30,37 @@ Stack trace:
 #2 /home/uiumji3ay04q/public_html/web/categories.php(1): include('/home/uiumji3ay...')
 #3 {main}
   thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 245
+[02-Mar-2023 20:48:27 UTC] PHP Warning:  Undefined variable $seoVariable in /home/uiumji3ay04q/public_html/web/includes/header.php on line 12
+[02-Mar-2023 20:48:28 UTC] PHP Warning:  Undefined array key "canon" in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 273
+[02-Mar-2023 20:48:28 UTC] PHP Warning:  Undefined array key "canon" in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 285
+[02-Mar-2023 20:48:39 UTC] PHP Fatal error:  Uncaught ImagickException: Constructor shouldn't be called with a boolean as the filename in /home/uiumji3ay04q/public_html/web/includes/sdk.php:266
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(266): Imagick->__construct()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/service.php(5): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 266
+[02-Mar-2023 20:48:49 UTC] PHP Fatal error:  Uncaught ImagickException: Constructor shouldn't be called with a boolean as the filename in /home/uiumji3ay04q/public_html/web/includes/sdk.php:266
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(266): Imagick->__construct()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/service.php(5): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 266
+[02-Mar-2023 20:48:54 UTC] PHP Warning:  Undefined variable $seoVariable in /home/uiumji3ay04q/public_html/web/includes/header.php on line 12
+[02-Mar-2023 20:48:55 UTC] PHP Warning:  Undefined array key "canon" in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 273
+[02-Mar-2023 20:48:55 UTC] PHP Warning:  Undefined array key "canon" in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 285
+[02-Mar-2023 20:49:00 UTC] PHP Fatal error:  Uncaught ImagickException: Constructor shouldn't be called with a boolean as the filename in /home/uiumji3ay04q/public_html/web/includes/sdk.php:266
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(266): Imagick->__construct()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/service.php(5): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 266
+[02-Mar-2023 20:49:19 UTC] PHP Fatal error:  Uncaught ImagickException: Constructor shouldn't be called with a boolean as the filename in /home/uiumji3ay04q/public_html/web/includes/sdk.php:266
+Stack trace:
+#0 /home/uiumji3ay04q/public_html/web/includes/sdk.php(266): Imagick->__construct()
+#1 /home/uiumji3ay04q/public_html/web/includes/header.php(12): Bytal->create_metas()
+#2 /home/uiumji3ay04q/public_html/web/service.php(5): include('/home/uiumji3ay...')
+#3 {main}
+  thrown in /home/uiumji3ay04q/public_html/web/includes/sdk.php on line 266

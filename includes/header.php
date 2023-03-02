@@ -1,21 +1,20 @@
 <?php 
-include 'includes/config.php'; 
+
 $especialidades = $bytal->gPosts("especialidades"); ?>
 <!DOCTYPE html>
 <html lang="en">
 
 <head>
   <meta charset="UTF-8" />
-  <base href="" />
+  <base href="/web/" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <?php  echo $bytal->create_metas()?>
-  <title></title>
+  <?php  echo $bytal->create_metas($seoVariable)?>
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css" />
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@4.0/dist/fancybox.css" />
   <link rel="stylesheet" href="css/styles.css?v=<?=time()?>" />
-  <script async src="https://www.bhrmarketing.com.co/credits/credits.js"></script>
+  <script src="https://www.bhrmarketing.com.co/credits/credits.js"></script>
 </head>
 
 <body>
@@ -25,7 +24,7 @@ $especialidades = $bytal->gPosts("especialidades"); ?>
     <nav class="container flex">
       <ul class="first-level flex">
         <li class="submenu bold wait"><a href="/">Inicio</a></li>
-        <li class="submenu bold wait"><a href="/about.php">Acerca de Bytal</a></li>
+        <li class="submenu bold wait"><a href="about.php">Acerca de Bytal</a></li>
         <li class="submenu bold parent">
           <a href="">Procedimientos</a>
           <ul>
@@ -75,7 +74,7 @@ $especialidades = $bytal->gPosts("especialidades"); ?>
   <header class="outter mobile">
     <nav>
       <a href="/" class="wait">Inicio</a>
-      <a href="/about.php" class="wait">Acerca de Bytal</a>
+      <a href="about.php" class="wait">Acerca de Bytal</a>
       <details>
         <summary>
           Procedimientos
@@ -137,5 +136,5 @@ $especialidades = $bytal->gPosts("especialidades"); ?>
 
     </div>
     <ul id="cart-items"></ul>
-    <a href="/checkout.php" class="button wait">Agendar mi valoración</a>
+    <a href="checkout.php" class="button wait">Agendar mi valoración</a>
   </div>

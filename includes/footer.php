@@ -43,7 +43,7 @@
         </div>
         <div class="copyright container flex">
           <a href="<?=$bytal->generalInfo->acf->estados_financieros?>" target="_blank" class="bold">Estados financieros</a>
-          <a href="/politics.php" class="bold">Políticas de privacidad</a>
+          <a href="politics.php" class="bold">Políticas de privacidad</a>
         </div>
       
   </body>

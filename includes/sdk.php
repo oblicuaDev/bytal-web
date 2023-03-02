@@ -5,8 +5,6 @@ class Bytal
     public $url = "https://webadminbytal.bhrmarketing.com.co/";
     public $generalInfo;
     public $gInterfaceWords;
-    public $politics;
-    public $about;
     public $categories;
     public $cache;
 
@@ -14,8 +12,6 @@ class Bytal
     {
         $this->cache=true;
         $this->generalInfo = $this->gInfo();
-        $this->politics = $this->gPolitics();
-        $this->about = $this->gAbout();
         $this->categories = $this->gPosts("cat-procedimiento");
     }
 
@@ -255,23 +251,25 @@ class Bytal
         return ($String);
     }
 // SEO
-function create_metas($type='pages', $seoId='6')
-{
-    $type = $type ?: 'pages';
-    $seoId = $seoId ?: '6';
-
-    $seo = $this->query($type . "/" . $seoId);
+function create_metas($seo = "") {
     global $metas, $urlMap;
+
+    if($seo == ""){
+        $seo = $this->generalInfo;
+    }
 
     $metas['title'] = $seo->acf->seo->titulo;
     $metas['desc'] = $seo->acf->seo->descripcion;
     $metas['words'] = $seo->acf->seo->palabras_clave;
     $metas['img'] = $seo->acf->seo->imagen;
+
+    if($metas['img'] != ""){
+        $image = new Imagick($seo->acf->seo->imagen);
+        $dataImg = $image->getImageGeometry();
+        $width = $dataImg['width'];
+        $height =  $dataImg['height'];
+    }
     
-    $image = new Imagick($seo->acf->seo->imagen);
-    $dataImg = $image->getImageGeometry();
-    $width = $dataImg['width'];
-    $height =  $dataImg['height'];
 
     return <<<HTML
 <meta charset="utf-8">
