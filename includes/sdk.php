@@ -12,38 +12,59 @@ class Bytal
 
     public function __construct()
     {
-        $this->cache=true;
         $this->generalInfo = $this->gInfo();
         $this->politics = $this->gPolitics();
         $this->about = $this->gAbout();
         $this->categories = $this->gPosts("cat-procedimiento");
     }
-
-    public function query($endpoint)
+    public function reindexCache(){
+        $dirPath = "/home/uiumji3ay04q/public_html/web/cache";
+       if (! is_dir($dirPath)) {
+                    throw new InvalidArgumentException("$dirPath must be a directory");
+                }
+                if (substr($dirPath, strlen($dirPath) - 1, 1) != '/') {
+                    $dirPath .= '/';
+                }
+                $files = glob($dirPath . '*', GLOB_MARK);
+                foreach ($files as $file) {
+                    if (is_dir($file)) {
+                        self::deleteDir($file);
+                    } else {
+                        unlink($file);
+                    }
+                }
+                rmdir($dirPath);
+        echo "Caché reiniciado";
+    }
+    public function query($endpoint,$cache=true)
     {
+        $cacheAbsoluteRoute = "/home/uiumji3ay04q/public_html/web/cache";
         $url = $this->domain . $endpoint;
         $ch = curl_init();
         curl_setopt($ch, CURLOPT_URL, $url);
         curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1);
         $filetitle = $this->get_alias($endpoint).".json";
-
-        if($this->cache)
+        
+        if($cache)
         {
             
-            if (!file_exists('cache')) {
-                mkdir('cache', 0777, true);
+            if (!file_exists($cacheAbsoluteRoute)) {
+                mkdir($cacheAbsoluteRoute, 0777, true);
             }
-            $path = "cache/".$filetitle;
+            $path = $cacheAbsoluteRoute."/".$filetitle;
 
             if(file_exists($path)){
+                //echo "exists";
                 $data = file_get_contents($path);
-                return json_decode($data);
+                $ok =  json_decode($data);
+                return $ok->response;
             }else{
                 $output = curl_exec($ch);
                 $request = json_decode($output);
+                
+                $finalstructure = '{"endpoint":"'.$endpoint.'","lastUpdate":"'.date("Y-m-d").'","response":'.$output.'}';
+                $bwriting = file_put_contents($path, $finalstructure); 
                 curl_close($ch);
-
-                $bwriting = file_put_contents($path, $output); 
                 return $request;
             }
         }else
@@ -69,6 +90,7 @@ class Bytal
                 $result = $this->query($type);
             }
         }else{
+            
             $result = $this->query($type."/".$id);
         }
         return $result;
