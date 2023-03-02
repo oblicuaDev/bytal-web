@@ -1,6 +1,6 @@
 $(document).ready(function () {
   AOS.init();
-  setCredits("#37788d", "ino");
+  setCredits("#283337", "bytal");
   $(".bannerSlider").bxSlider({
     controls: false,
   });
